@@ -128,7 +128,10 @@ function Table({}: Props) {
       <tbody>
         {results.map((v, i) => {
           return (
-            <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-600">
+            <tr
+              key={i}
+              className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-600"
+            >
               <td className="px-6 py-4 whitespace-nowrap text-left font-medium text-gray-900 dark:text-white">
                 <Link href={`/weatherDetails/${v.name}`}>{v.name}</Link>
               </td>
@@ -141,7 +144,7 @@ function Table({}: Props) {
             </tr>
           );
         })}
-        {/* <InfiniteScroll
+        <InfiniteScroll
           dataLength={results.length} //This is important field to render the next data
           next={fetchMoreData}
           hasMore={true}
@@ -151,8 +154,10 @@ function Table({}: Props) {
               <b>Yay! You have seen it all</b>
             </p>
           }
-          children={<></>}
-        ></InfiniteScroll> */}
+          children={results.map((v, i) => {
+            return <div key={`I${i}`}></div>;
+          })}
+        ></InfiniteScroll>
         <style jsx>
           {`
             .back {
