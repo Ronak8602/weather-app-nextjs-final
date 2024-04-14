@@ -141,7 +141,7 @@ function Table({}: Props) {
             </tr>
           );
         })}
-        <InfiniteScroll
+        {/* <InfiniteScroll
           dataLength={results.length} //This is important field to render the next data
           next={fetchMoreData}
           hasMore={true}
@@ -151,8 +151,8 @@ function Table({}: Props) {
               <b>Yay! You have seen it all</b>
             </p>
           }
-          children={undefined}
-        ></InfiniteScroll>
+          children={<></>}
+        ></InfiniteScroll> */}
         <style jsx>
           {`
             .back {
