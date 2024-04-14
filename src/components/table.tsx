@@ -154,10 +154,11 @@ function Table({}: Props) {
               <b>Yay! You have seen it all</b>
             </p>
           }
-          children={results.map((v, i) => {
+        >
+          {results.map((v, i) => {
             return <div key={`I${i}`}></div>;
           })}
-        ></InfiniteScroll>
+        </InfiniteScroll>
         <style jsx>
           {`
             .back {
